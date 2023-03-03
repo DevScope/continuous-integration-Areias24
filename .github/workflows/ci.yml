@@ -20,11 +20,6 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v3
-      
-      - uses: actions/upload-artifact@v3
-        with:
-          name: remark-lint-report
-          path: public/
           
       - name: Run markdown lint
         run: |
@@ -32,5 +27,11 @@ jobs:
           npx remark . --use remark-preset-lint-consistent --frail
           
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: remark-lint-report
+          path: public/
           
+          
+           _underscore_
          
